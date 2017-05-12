@@ -1,0 +1,72 @@
+ru: 
+  activerecord:
+    models:
+      appointment:
+        one: 'Прием'
+        few: 'Приемы'
+        other: 'Приемы'
+      category:
+        one: 'Категорию услуг'
+        few: 'Категории услуг'
+        other: 'Категории услуг'
+      expert:
+        one: 'Специалиста'
+        few: 'Специалисты'
+        other: 'Специалисты'
+      experts_service:
+        one: 'Услугу специалиста'
+        few: 'Услуги специалиста'
+        other: 'Услуги специалиста'
+      post:
+        one: 'Новость'
+        few: 'Новости'
+        other: 'Новости'
+      service:
+        one: 'Услугу'
+        few: 'Услуги'
+        other: 'Услуги'
+      sub_category:
+        one: 'Под категорию услуг'
+        few: 'Под категории услуг'
+        other: 'Под категории услуг'
+      user:
+        one: 'Пользователя'
+        few: 'Пользователи'
+        other: 'Пользователи'
+    attributes:
+      appointment:
+        full_name: 'ФИО'
+        phone: 'Телефон'
+        arranged_at: 'Назначено на'
+        aasm_state: 'Статус'
+        experts_service: 'Процедура'
+        experts_service_label: 'Процедура'
+        experts_service_id: 'Процедура'
+        created_at: 'Создано'
+      category:
+        name: 'Наименование'
+        created_at: 'Создано'
+      expert:
+        full_name: 'ФИО'
+        avatar: 'Аватар'
+        specialty: 'Специальность'
+        experience: 'Опыт'
+        description: 'Описание'
+      experts_service:
+        service_id: 'Услуга'
+      post:
+        title: 'Заголовок'
+        text: 'Текст'
+        created_at: 'Создано'
+      service:
+        sub_category_label: 'Категория / Под категория'
+        name: 'Наименование'
+        price: 'Цена'
+        sub_category: 'Категория / Под категория'
+        sub_category_id: 'Категория / Под категория'
+      sub_category:
+        name: 'Наименование'
+      user: 
+        username: 'Username'
+        email: 'Email'
+        role: 'Роль'

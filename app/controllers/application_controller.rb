@@ -6,12 +6,4 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
 
   layout 'authorized'
-
-  private def expire_last_cost_fragments
-    expire_fragment(%r{last_cost\..*}) if response.status.in?([200, 302])
-  end
-
-  private def expire_fund_change_fragments
-    expire_fragment(%r{fund_change\..*}) if response.status.in?([200, 302])
-  end
 end

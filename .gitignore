@@ -23,3 +23,5 @@
 # Ignore configs
 /config/secrets.yml
 /config/database.yml
+
+/public/system/*

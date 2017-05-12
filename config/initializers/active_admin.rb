@@ -4,7 +4,7 @@ ActiveAdmin.setup do |config|
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
   #
-  config.site_title = "Videolist Active Admin"
+  config.site_title = "Sweet Beauty"
 
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
@@ -146,7 +146,6 @@ ActiveAdmin.setup do |config|
   # Active Admin resources and pages from here.
   #
   # config.before_action :do_something_awesome
-
   # == Localize Date/Time Format
   #
   # Set the localize format to display dates and times.

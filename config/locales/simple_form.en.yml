@@ -19,52 +19,6 @@ en:
     #       email: 'E-mail to sign in.'
     #     edit:
     #       email: 'E-mail.'
-    labels:
-      cost:
-        name: 'Name'
-        cost_category_id: 'Cost category'
-        amount: 'Amount'
-        amount_from: 'Amount bigger then'
-        amount_to: 'Amount less then'
-        description: 'Description'
-        spent_on: 'Spent on'
-        spent_on_from: 'Spent after'
-        spent_on_to: 'Spent before'
-      cost_category:
-        name: 'Name'
-        month_limit: 'Month limit'
-        description: 'Description'
-      fund:
-        name: 'Name'
-        amount: 'Amount'
-        currency: 'Currency'
-        description: 'Description'
-      income:
-        name: 'Name'
-        amount: 'Amount'
-        description: 'Description'
-        got_on: 'Got on'
-    placeholders:
-      cost:
-        name: 'Cost name'
-        amount: 'Cost amount'
-        amount_from: 'Amount bigger then'
-        amount_to: 'Amount less then'
-        description: 'Cost description'
-        spent_on_from: 'Spent after'
-        spent_on_to: 'Spent before'
-      cost_category:
-        name: 'Cost category name'
-        month_limit: 'Cost category month limit'
-        description: 'Cost categort description'
-      fund:
-        name: 'Fund name'
-        amount: 'Fund amount'
-        description: 'Fund description'
-      income:
-        name: 'Income name'
-        amount: 'Income amount'
-        description: 'Income description'
     # hints:
     #   defaults:
     #     username: 'User name to sign in.'
@@ -75,8 +29,3 @@ en:
     # prompts:
     #   defaults:
     #     age: 'Select your age'
-    prompts:
-      cost:
-        cost_category_id: 'Select cost category'
-      fund:
-        currency: 'Select fund currency'

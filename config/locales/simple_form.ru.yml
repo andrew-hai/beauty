@@ -19,52 +19,6 @@ ru:
     #       email: 'E-mail to sign in.'
     #     edit:
     #       email: 'E-mail.'
-    labels:
-      cost:
-        name: 'Название'
-        cost_category_id: 'Категория'
-        amount: 'Сумма'
-        amount_from: 'Сумма больше'
-        amount_to: 'Сумма меньше'
-        description: 'Описание'
-        spent_on: 'Потрачено'
-        spent_on_from: 'Потрачено после'
-        spent_on_to: 'Потрачено до'
-      cost_category:
-        name: 'Название'
-        month_limit: 'Месячный лимит'
-        description: 'Описание'
-      fund:
-        name: 'Название'
-        amount: 'Сумма'
-        currency: 'Валюта'
-        description: 'Описание'
-      income:
-        name: 'Название'
-        amount: 'Сумма'
-        description: 'Описание'
-        got_on: 'Получено'
-    placeholders:
-      cost:
-        name: 'Введите название расхода'
-        amount: 'Введите сумму расхода'
-        amount_from: 'Введите минимальную сумму расхода'
-        amount_to: 'Введите максимальную сумму расхода'
-        description: 'Введите описание расхода'
-        spent_on_from: 'Введите дату начала расходов'
-        spent_on_to: 'Введите дату окончания расходов'
-      cost_category:
-        name: 'Введите название категории расходов'
-        month_limit: 'Введите месячный лимит категории расходов'
-        description: 'Введите описание категории расходов'
-      fund:
-        name: 'Введите название денежнего средства'
-        amount: 'Введите сумму денежнего средства'
-        description: 'Введите описание денежнего средства'
-      income:
-        name: 'Введите название поступления'
-        amount: 'Введите сумму поступления'
-        description: 'Введите описание постуления'
     # hints:
     #   defaults:
     #     username: 'User name to sign in.'
@@ -75,8 +29,3 @@ ru:
     # prompts:
     #   defaults:
     #     age: 'Select your age'
-    prompts:
-      cost:
-        cost_category_id: 'Выберите категорию расхода'
-      fund:
-        currency: 'Выберите валюту денежнего средства'

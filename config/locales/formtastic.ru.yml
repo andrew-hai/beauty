@@ -1,0 +1,61 @@
+ru:
+  formtastic:
+    yes: 'Да'
+    no: 'Нет'
+    create: 'Создать %{model}'
+    update: 'Обновить %{model}'
+    submit: 'Сохранить'
+    cancel: 'Отмена'
+    reset: 'Сбросить %{model}'
+    required: 'Обязательное поле'
+
+    labels:
+      appointment:
+        full_name: 'ФИО'
+        phone: 'Телефон'
+        arranged_at: 'Назначено на'
+        aasm_state: 'Статус'
+        experts_service: 'Процедура'
+        experts_service_id: 'Процедура'
+      expert:
+        full_name: 'ФИО'
+        avatar: 'Аватар'
+        specialty: 'Специальность'
+        experience: 'Опыт'
+        description: 'Описание'
+      post:
+        title: 'Заголовок'
+        text: 'Текст'
+      user:
+        username: 'Username'
+        email: 'Email'
+        role: 'Роль пользвателя'
+        password: 'Пароль'
+        password_confirmation: 'Подтверждение пароля'
+    placeholders:
+      appointment:
+        full_name: 'Введите ФИО'
+        phone: 'Введите Телефон'
+        arranged_at: 'Введите время процедуры'
+      category:
+        name: 'Введите наименование'
+      expert:
+        full_name: 'Введите ФИО'
+        specialty: 'Введите специальность'
+        experience: 'Введите опыт'
+        description: 'Введите описание'
+      post:
+        title: 'Введите заголовок'
+        text: 'Введите текст'
+      user:
+        username: 'Введите username'
+        email: 'Введите email'
+        password: 'Введите пароль'
+        password_confirmation: 'Подтвердите пароль'
+    prompts:
+      appointment:
+        aasm_state: 'Выберите статус'
+        experts_service: 'Процедура'
+        experts_service_id: 'Процедура'
+      user:
+        role: 'Выберите роль пользователя'
