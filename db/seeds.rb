@@ -41,3 +41,9 @@ expert = Expert.create(
   experience: '10 лет работы где-то',
   description: 'Описание специалиста'
 )
+
+contact = Contact.create(
+  work_hours: 'ПН-ПТ: 10:00-19:00',
+  phone: 1234567890,
+  email: 'fake@mail.com'
+)

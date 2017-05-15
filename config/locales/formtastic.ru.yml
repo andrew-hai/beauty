@@ -39,6 +39,18 @@ ru:
         arranged_at: 'Введите время процедуры'
       category:
         name: 'Введите наименование'
+      contact:
+        work_hours: 'Введите режим работы'
+        phone: 'Введите телефон'
+        email: 'Введите Email'
+        site_url: 'Введите Site URL'
+        vk_url: 'Введите VK URL'
+        facebook_url: 'Введите Facebook URL'
+        twitter_url: 'Введите Twitter URL'
+        instagram_url: 'Введите Instagram URL'
+        address: 'Введите адрес'
+        latitude: 'Введите широту'
+        longitude: 'Введите долготу'
       expert:
         full_name: 'Введите ФИО'
         specialty: 'Введите специальность'

@@ -7,7 +7,7 @@ class Expert < ApplicationRecord
       medium: ['300x300#', :png],
       thumb: ['100x100#', :png]
     },
-    default_url: '/images/:style/missing.png'
+    default_url: '/assets/:style/missing.png'
 
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 

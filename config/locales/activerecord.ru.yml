@@ -9,6 +9,14 @@ ru:
         one: 'Категорию услуг'
         few: 'Категории услуг'
         other: 'Категории услуг'
+      contact:
+        one: 'Контакты'
+        few: 'Контакты'
+        other: 'Контакты'
+      device:
+        one: 'Устройство'
+        few: 'Устройства'
+        other: 'Устройства'
       expert:
         one: 'Специалиста'
         few: 'Специалисты'
@@ -46,6 +54,23 @@ ru:
       category:
         name: 'Наименование'
         created_at: 'Создано'
+      contact:
+        work_hours: 'Режим работы'
+        phone: 'Телефон'
+        email: 'Email'
+        site_url: 'Site URL'
+        vk_url: 'VK URL'
+        facebook_url: 'Facebook URL'
+        twitter_url: 'Twitter URL'
+        instagram_url: 'Instagram URL'
+        address: 'Адрес'
+        latitude: 'Широта'
+        longitude: 'Долгота'
+        created_at: 'Создано'
+        updated_at: 'Обновлено'
+      device:
+        created_at: 'Создано'
+        updated_at: 'Обновлено'
       expert:
         full_name: 'ФИО'
         avatar: 'Аватар'
