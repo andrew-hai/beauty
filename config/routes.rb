@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :appointments, only: [:create]
+      resources :appointments, only: [:create, :show]
+      resources :contacts, only: [:index]
       resources :devices, only: [:create]
       resources :experts, only: [:index, :show]
       resources :posts, only: [:index]

@@ -37,6 +37,8 @@ ru:
         full_name: 'Введите ФИО'
         phone: 'Введите Телефон'
         arranged_at: 'Введите время процедуры'
+        device_id: 'Выбирете устройство'
+        experts_service_id: 'Выбирете процедуру'
       category:
         name: 'Введите наименование'
       contact:
@@ -66,8 +68,6 @@ ru:
         password_confirmation: 'Подтвердите пароль'
     prompts:
       appointment:
-        aasm_state: 'Выберите статус'
-        experts_service: 'Процедура'
         experts_service_id: 'Процедура'
       user:
         role: 'Выберите роль пользователя'
