@@ -18,9 +18,10 @@ class Appointment < ApplicationRecord
     end
   end
 
+  belongs_to :device, inverse_of: :appointments
   belongs_to :experts_service, inverse_of: :appointments
 
-  validates :full_name, :phone, :arranged_at, :status, :experts_service_id, presence: true
+  validates :full_name, :phone, :arranged_at, :status, :experts_service, presence: true
 
   def experts_service_label
     experts_service.label

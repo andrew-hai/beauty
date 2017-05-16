@@ -1,6 +1,7 @@
 class CreateAppointments < ActiveRecord::Migration[5.0]
   def change
     create_table :appointments do |t|
+      t.references :device, index: true
       t.string :full_name
       t.string :phone
       t.datetime :arranged_at

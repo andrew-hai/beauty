@@ -14,6 +14,10 @@ class ExpertsService < ApplicationRecord
       ).order('experts.full_name ASC, services.name ASC')
   end
 
+  def expert_full_name
+    expert.full_name
+  end
+
   def label
     "#{expert.full_name} - #{service.name}"
   end

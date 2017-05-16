@@ -5,7 +5,7 @@ module Api::V1
       if device.save
         render json: device.as_json(only: [:id, :fcm_token])
       else
-        render json: device.errors
+        render json: device.errors, status: 422
       end
     end
 

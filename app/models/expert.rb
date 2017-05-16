@@ -14,4 +14,12 @@ class Expert < ApplicationRecord
   validates :full_name, :specialty, :experience, presence: true
 
   accepts_nested_attributes_for :experts_services, allow_destroy: true
+
+  def services
+    []
+  end
+
+  def working_days
+    []
+  end
 end
