@@ -5,9 +5,10 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :appointments, only: [:index, :create] do
+      resources :appointments, only: [:index, :create, :show] do
         put :cancel, on: :member
       end
+      resources :contacts, only: [:index]
       resources :devices, only: [:create]
       resources :experts, only: [:index, :show]
       resources :experts_services, only: [:index]

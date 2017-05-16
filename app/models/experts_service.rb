@@ -7,9 +7,10 @@ class ExpertsService < ApplicationRecord
   validates :service_id, uniqueness: { scope: :expert_id }
 
   scope :search_by_name, ->(name) do
-    includes(:expert, :service)
-      .where(<<-SQL, "%#{name.downcase}%", "%#{name.downcase}%"
-          (LOWER(experts.full_name) LIKE ?) OR (LOWER(services.name) LIKE ?)
+    includes(:expert, service: { sub_category: :category })
+      .where(<<-SQL, "%#{name.downcase}%", "%#{name.downcase}%", "%#{name.downcase}%", "%#{name.downcase}%"
+          (LOWER(categories.name) LIKE ?) OR (LOWER(sub_categories.name) LIKE ?)
+          OR (LOWER(experts.full_name) LIKE ?) OR (LOWER(services.name) LIKE ?)
         SQL
       ).order('experts.full_name ASC, services.name ASC')
   end
@@ -19,6 +20,6 @@ class ExpertsService < ApplicationRecord
   end
 
   def label
-    "#{expert.full_name} - #{service.name}"
+    "#{expert.full_name} - #{service.label}"
   end
 end

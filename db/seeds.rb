@@ -47,3 +47,7 @@ contact = Contact.create(
   phone: 1234567890,
   email: 'fake@mail.com'
 )
+
+device = Device.create(
+  fcm_token: 'test_token'
+)

@@ -7,6 +7,7 @@ class CreateAppointments < ActiveRecord::Migration[5.0]
       t.datetime :arranged_at
       t.string :aasm_state, null: false, default: :created
       t.references :experts_service, index: true
+      t.references :device, index: true
 
       t.timestamps null: false
     end

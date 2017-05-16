@@ -1,3 +1,5 @@
+include ApplicationHelper
+
 ActiveAdmin.register Service do
   permit_params :name,
                 :price,
@@ -19,7 +21,7 @@ ActiveAdmin.register Service do
     f.inputs I18n.t(:service_details) do
       f.input :name
       f.input :price
-      f.input :sub_category, collection: SubCategory.sub_category_collection
+      f.input :sub_category, collection: sub_category_collection
     end
     f.actions
   end

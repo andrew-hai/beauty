@@ -20,6 +20,7 @@ ActiveAdmin.register Expert do
   filter :full_name
   filter :specialty
   filter :experience
+  filter :description
 
   form do |f|
     f.inputs I18n.t(:expert_details) do

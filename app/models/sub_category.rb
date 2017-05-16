@@ -7,9 +7,4 @@ class SubCategory < ApplicationRecord
   def label
     "[#{category.name}] #{name}"
   end
-
-  def self.sub_category_collection
-    joins(:category).order('categories.name ASC, sub_categories.name ASC')
-      .all.map{ |sc| [sc.label, sc.id] }
-  end
 end
