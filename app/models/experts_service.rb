@@ -1,7 +1,7 @@
 class ExpertsService < ApplicationRecord
-  belongs_to :expert, inverse_of: :experts_services
-  belongs_to :service, inverse_of: :experts_services
-  has_many :appointments, inverse_of: :experts_service
+  belongs_to :expert
+  belongs_to :service
+  has_many :appointments
 
   validates :expert_id, :service_id, presence: true
   validates :service_id, uniqueness: { scope: :expert_id }

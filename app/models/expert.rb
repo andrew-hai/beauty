@@ -1,5 +1,5 @@
 class Expert < ApplicationRecord
-  has_many :experts_services, inverse_of: :expert
+  has_many :experts_services
   has_many :services, through: :experts_services
 
   has_attached_file :avatar,
@@ -15,9 +15,9 @@ class Expert < ApplicationRecord
 
   accepts_nested_attributes_for :experts_services, allow_destroy: true
 
-  def services
-    []
-  end
+  # def services
+  #   []
+  # end
 
   def working_days
     []

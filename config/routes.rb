@@ -13,7 +13,9 @@ Rails.application.routes.draw do
       resources :experts, only: [:index, :show]
       resources :experts_services, only: [:index]
       resources :posts, only: [:index]
-      resources :services, only: [:index]
+      resources :services, only: [:index] do
+        get :price_list, on: :collection
+      end
     end
   end
 

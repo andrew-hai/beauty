@@ -16,12 +16,12 @@ ActiveRecord::Schema.define(version: 20170515143306) do
   enable_extension "plpgsql"
 
   create_table "appointments", force: :cascade do |t|
+    t.integer  "device_id"
     t.string   "full_name"
     t.string   "phone"
     t.datetime "arranged_at"
     t.string   "aasm_state",         default: "created", null: false
     t.integer  "experts_service_id"
-    t.integer  "device_id"
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.index ["device_id"], name: "index_appointments_on_device_id", using: :btree

@@ -3,5 +3,9 @@ module Api::V1
     def index
       render json: Service.all.as_json(only: [:id, :name, :price])
     end
+
+    def price_list
+      render json: ::PriceListPresenter.data
+    end
   end
 end

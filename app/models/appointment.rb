@@ -18,8 +18,8 @@ class Appointment < ApplicationRecord
     end
   end
 
-  belongs_to :device, inverse_of: :appointments
-  belongs_to :experts_service, inverse_of: :appointments
+  belongs_to :device
+  belongs_to :experts_service
 
   validates :full_name, :phone, :arranged_at, :device, :experts_service, presence: true
 
