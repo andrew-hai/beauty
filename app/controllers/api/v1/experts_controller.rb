@@ -3,7 +3,7 @@ module Api::V1
     def index
       render json: Expert.all.as_json(
         only: [:id, :full_name, :specialty, :experience, :description],
-        methods: [:avatar]
+        methods: [:avatar_full_path]
       )
     end
 
