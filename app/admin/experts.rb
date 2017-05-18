@@ -39,6 +39,8 @@ ActiveAdmin.register Expert do
       end
     end
 
+    render 'calendar', expert: expert
+
     f.actions
   end
 
@@ -58,6 +60,8 @@ ActiveAdmin.register Expert do
         column I18n.t(:service), :label
       end
     end
+
+    render 'view_calendar', expert: expert
   end
 
   collection_action :search, method: :get do

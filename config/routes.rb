@@ -3,6 +3,12 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  namespace :admin do
+    resources :working_days, only: [] do
+      post :toggle, on: :collection
+    end
+  end
+
   namespace :api do
     namespace :v1 do
       resources :appointments, only: [:index, :create, :show] do

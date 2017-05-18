@@ -1,0 +1,7 @@
+%fieldset.inputs{ data: { 'expert-id' => expert.id }}
+  %legend
+    %span=t(:working_days)
+  %ol 
+    = month_calendar events: expert.working_days do |date, working_days|
+      .hidden= date
+      = l date

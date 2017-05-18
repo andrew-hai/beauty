@@ -1,0 +1,8 @@
+%form
+  %fieldset.inputs
+    %legend
+      %span=t(:working_days)
+    %ol 
+      = month_calendar events: expert.working_days do |date, working_days|
+        .hidden= date
+        = l date

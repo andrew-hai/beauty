@@ -1,6 +1,9 @@
 class Expert < ApplicationRecord
+  include ActionView::Helpers::AssetUrlHelper
+
   has_many :experts_services
   has_many :services, through: :experts_services
+  has_many :working_days, inverse_of: :expert
 
   has_attached_file :avatar,
     styles: { 
@@ -15,11 +18,15 @@ class Expert < ApplicationRecord
 
   accepts_nested_attributes_for :experts_services, allow_destroy: true
 
-  # def services
-  #   []
-  # end
+  def avatar_full_path
+    image_url(avatar.url(:medium))
+  end
 
-  def working_days
-    []
+  def services_json
+    services.as_json(only: [:id], methods: [:label])
+  end
+
+  def working_days_json
+    working_days.map(&:start_time)
   end
 end

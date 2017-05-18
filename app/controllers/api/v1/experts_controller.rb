@@ -10,7 +10,7 @@ module Api::V1
     def show
       render json: expert.as_json(
         only: [:id, :full_name, :specialty, :experience, :description],
-        methods: [:avatar, :services, :working_days]
+        methods: [:avatar_full_path, :services_json, :working_days_json]
       )
     end
 

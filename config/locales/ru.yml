@@ -20,6 +20,19 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 ru:
+  months:
+    January: 'Январь'
+    February: 'Февраль'
+    March: 'Март'
+    April: 'Апрель'
+    May: 'Май'
+    June: 'Июнь'
+    July: 'Июль'
+    August: 'Август'
+    September: 'Сентябрь'
+    October: 'Октябрь'
+    November: 'Ноябрь'
+    December: 'Декабрь'
   date:
     formats:
       default: '%-d %B, %Y'
@@ -28,8 +41,13 @@ ru:
   category_details: 'Детали категории услуг'
   expert_details: 'Детали специалиста'
   experts_services: 'Услуги специалиста'
+  working_days: 'Рабочии дни'
   post_details: 'Детали новости'
   service: 'Услуга'
   service_details: 'Детали услуги'
   sub_categories: 'Под категории услуг'
   user_details: 'Детали пользователя'
+
+  simple_calendar:
+    next: 'Следующий'
+    previous: 'Предыдущий'

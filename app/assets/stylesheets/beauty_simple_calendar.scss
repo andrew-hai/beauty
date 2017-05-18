@@ -1,0 +1,42 @@
+.simple-calendar {
+  .hidden {
+    display: none;
+  }
+
+  .calendar-heading {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  // .day {}
+
+  // .wday-0 {}
+  // .wday-1 {}
+  // .wday-2 {}
+  // .wday-3 {}
+  // .wday-4 {}
+  // .wday-5 {}
+  // .wday-6 {}
+
+  // .today {}
+  // .past {}
+  // .future {}
+
+  // .start-date {}
+
+  // .prev-month {}
+  // .next-month {}
+  // .current-month {}
+
+  .has-events {
+    background-color: #fff;
+  }
+}
+
+#edit_expert {
+  .simple-calendar {
+    .day {
+      cursor: pointer;
+    }
+  }
+}
