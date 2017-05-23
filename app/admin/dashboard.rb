@@ -47,6 +47,10 @@ ActiveAdmin.register_page "Dashboard" do
         ul do
           li 'POST http://46.254.19.175/api/v1/devices - required params [:fcm_token]'
         end
+        h4 'Email Address'
+        ul do
+          li 'GET http://46.254.19.175/api/v1/email_addresses'
+        end
         h4 'Experts'
         ul do
           li 'GET http://46.254.19.175/api/v1/experts'

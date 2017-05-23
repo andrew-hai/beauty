@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170518102245) do
+ActiveRecord::Schema.define(version: 20170523103313) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,19 +39,28 @@ ActiveRecord::Schema.define(version: 20170518102245) do
     t.string   "phone"
     t.string   "email"
     t.string   "site_url"
-    t.string   "vk_url"
+    t.string   "vk_url_1"
     t.string   "facebook_url"
     t.string   "twitter_url"
     t.string   "instagram_url"
     t.string   "address"
-    t.float    "latitude"
-    t.float    "longitude"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.decimal  "latitude",      precision: 15, scale: 13
+    t.decimal  "longitude",     precision: 15, scale: 13
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
+    t.string   "vk_url_2"
+    t.string   "vk_url_3"
+    t.string   "vk_url_4"
   end
 
   create_table "devices", force: :cascade do |t|
     t.string   "fcm_token"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "email_addresses", force: :cascade do |t|
+    t.string   "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

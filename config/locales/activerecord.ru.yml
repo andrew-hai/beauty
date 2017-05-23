@@ -17,6 +17,10 @@ ru:
         one: 'Устройство'
         few: 'Устройства'
         other: 'Устройства'
+      email_address:
+        one: 'Email'
+        few: 'Emails'
+        other: 'Emails'
       expert:
         one: 'Специалиста'
         few: 'Специалисты'

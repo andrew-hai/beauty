@@ -26,6 +26,7 @@ en:
       short: '%-d %B'
   appointment_details: 'Appointment Details'
   category_details: 'Category Details'
+  contact_details: 'Category Details'
   expert_details: 'Expert Details'
   experts_services: 'Experts Services'
   working_days: 'Working days'

@@ -51,3 +51,7 @@ contact = Contact.create(
 device = Device.create(
   fcm_token: 'test_token'
 )
+
+email_address = EmailAddress.create(
+  email: 'fake@mail.com'
+)

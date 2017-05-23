@@ -39,6 +39,7 @@ ru:
       short: '%-d %B'
   appointment_details: 'Детали приёма'
   category_details: 'Детали категории услуг'
+  contact_details: 'Детали контактов'
   expert_details: 'Детали специалиста'
   experts_services: 'Услуги специалиста'
   working_days: 'Рабочии дни'

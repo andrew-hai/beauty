@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       end
       resources :contacts, only: [:index]
       resources :devices, only: [:create]
+      resources :email_addresses, only: [:index]
       resources :experts, only: [:index, :show]
       resources :experts_services, only: [:index]
       resources :posts, only: [:index]
