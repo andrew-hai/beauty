@@ -19,7 +19,7 @@ class Expert < ApplicationRecord
 
   accepts_nested_attributes_for :experts_services, allow_destroy: true
 
-  delegate :label, :name, to: :sub_category, prefix: true
+  delegate :label, :name, to: :sub_category, prefix: true, allow_nil: true
 
   def avatar_full_path
     image_url(avatar.url(:medium), host: Rails.application.config.action_controller.asset_host)
