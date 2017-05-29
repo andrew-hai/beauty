@@ -35,7 +35,7 @@ ActiveAdmin.register_page "Dashboard" do
         h4 'Appointments:'
         ul do
           li 'GET http://46.254.19.175/api/v1/appointments?device_id=$device_id'
-          li 'POST http://46.254.19.175/api/v1/appointments - required params [:device_id, :full_name, :phone, :arranged_at, :experts_service_id]'
+          li 'POST http://46.254.19.175/api/v1/appointments - required params { appointment: [:device_id, :full_name, :phone, :arranged_at, :experts_service_id] }'
           li 'GET http://46.254.19.175/api/v1/appointments/$appointment_id'
           li 'PUT http://46.254.19.175/api/v1/appointments/$appointment_id/cancel'
         end
@@ -45,7 +45,7 @@ ActiveAdmin.register_page "Dashboard" do
         end
         h4 'Devices'
         ul do
-          li 'POST http://46.254.19.175/api/v1/devices - required params [:fcm_token]'
+          li 'POST http://46.254.19.175/api/v1/devices - required params { device: [:fcm_token, :name] }'
         end
         h4 'Email Address'
         ul do
@@ -73,4 +73,3 @@ ActiveAdmin.register_page "Dashboard" do
     end
   end
 end
- 

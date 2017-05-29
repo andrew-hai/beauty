@@ -3,7 +3,7 @@ class ExpertsService < ApplicationRecord
   belongs_to :service
   has_many :appointments
 
-  validates :expert_id, :service_id, presence: true
+  validates :service_id, presence: true
   validates :service_id, uniqueness: { scope: :expert_id }
 
   scope :search_by_name, ->(name) do

@@ -3,14 +3,14 @@ module Api::V1
     def create
       device = Device.new(device_params)
       if device.save
-        render json: device.as_json(only: [:id, :fcm_token])
+        render json: device.as_json(only: [:id, :fcm_token, :name])
       else
         render json: device.errors, status: 422
       end
     end
 
     private def device_params
-      params.require(:device).permit(:fcm_token)
+      params.require(:device).permit(:fcm_token, :name)
     end
   end
 end

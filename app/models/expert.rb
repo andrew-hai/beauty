@@ -1,6 +1,7 @@
 class Expert < ApplicationRecord
   include ActionView::Helpers::AssetUrlHelper
 
+  belongs_to :sub_category
   has_many :experts_services
   has_many :services, through: :experts_services
   has_many :working_days, inverse_of: :expert
@@ -18,12 +19,14 @@ class Expert < ApplicationRecord
 
   accepts_nested_attributes_for :experts_services, allow_destroy: true
 
+  delegate :label, :name, to: :sub_category, prefix: true
+
   def avatar_full_path
     image_url(avatar.url(:medium), host: Rails.application.config.action_controller.asset_host)
   end
 
   def services_json
-    services.as_json(only: [:id], methods: [:label])
+    services.as_json(only: [:id, :name])
   end
 
   def working_days_json

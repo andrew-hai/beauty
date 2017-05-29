@@ -79,6 +79,7 @@ ru:
         created_at: 'Создано'
         updated_at: 'Обновлено'
       device:
+        name: 'Название'
         created_at: 'Создано'
         updated_at: 'Обновлено'
       expert:
@@ -87,6 +88,9 @@ ru:
         specialty: 'Специальность'
         experience: 'Опыт'
         description: 'Описание'
+        sub_category: 'Под категория'
+        sub_category_id: 'Под категория'
+        sub_category_label: 'Под категория'
       experts_service:
         service_id: 'Услуга'
       post:

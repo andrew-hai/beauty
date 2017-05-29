@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170523103313) do
+ActiveRecord::Schema.define(version: 20170529122038) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20170523103313) do
     t.string   "fcm_token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "name"
   end
 
   create_table "email_addresses", force: :cascade do |t|
@@ -76,6 +77,8 @@ ActiveRecord::Schema.define(version: 20170523103313) do
     t.text     "description"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+    t.integer  "sub_category_id"
+    t.index ["sub_category_id"], name: "index_experts_on_sub_category_id", using: :btree
   end
 
   create_table "experts_services", force: :cascade do |t|

@@ -4,6 +4,7 @@ ActiveAdmin.register Expert do
                 :specialty,
                 :experience,
                 :description,
+                :sub_category_id,
                 experts_services_attributes: [:id, :service_id, :_destroy]
 
   index do
@@ -14,6 +15,7 @@ ActiveAdmin.register Expert do
     column :specialty
     column :experience
     column :description
+    column :sub_category_label
     actions
   end
 
@@ -21,6 +23,7 @@ ActiveAdmin.register Expert do
   filter :specialty
   filter :experience
   filter :description
+  filter :sub_category
 
   form do |f|
     f.inputs I18n.t(:expert_details) do
@@ -29,6 +32,7 @@ ActiveAdmin.register Expert do
       f.input :specialty
       f.input :experience
       f.input :description
+      f.input :sub_category, collection: sub_category_collection
     end
 
     f.inputs I18n.t(:experts_services) do
@@ -52,6 +56,7 @@ ActiveAdmin.register Expert do
       row :specialty
       row :experience
       row :description
+      row :sub_category_label
     end
 
     panel I18n.t(:experts_services) do
