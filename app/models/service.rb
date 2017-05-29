@@ -7,8 +7,10 @@ class Service < ApplicationRecord
 
   scope :search_by_name, ->(name) do
     includes(sub_category: :category)
-      .where(<<-SQL, "%#{name.downcase}%", "%#{name.downcase}%", "%#{name.downcase}%"
-          (LOWER(categories.name) LIKE ?) OR (LOWER(sub_categories.name) LIKE ?) OR (LOWER(services.name) LIKE ?)
+      .where(<<-SQL, "%#{name}%", "%#{name}%", "%#{name}%"
+          (LOWER(categories.name) LIKE LOWER(?)) OR
+            (LOWER(sub_categories.name) LIKE LOWER(?)) OR
+            (LOWER(services.name) LIKE LOWER(?))
         SQL
       ).order('categories.name ASC, sub_categories.name ASC, services.name ASC')
   end
