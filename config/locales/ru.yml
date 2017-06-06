@@ -45,10 +45,17 @@ ru:
   experts_services: 'Услуги специалиста'
   working_days: 'Рабочии дни'
   post_details: 'Детали новости'
+  send_to_fcm: 'Отправить пуши'
   service: 'Услуга'
   service_details: 'Детали услуги'
   sub_categories: 'Под категории услуг'
   user_details: 'Детали пользователя'
+
+  post:
+    send_to_fcm:
+      status_messages:
+        '200': 'Сообщения были успешно отправлены'
+        '422': 'По какой-то причине сообщения не были отправлены, попробуйте сделать это еще раз'
 
   simple_calendar:
     next: 'Следующий'

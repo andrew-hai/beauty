@@ -34,5 +34,11 @@ en:
   post_details: 'Post Details'
   service: 'Service'
   service_details: 'Service Details'
+  send_to_fcm: 'Send to FCM'
   sub_categories: 'Sub Categories'
   user_details: 'User Details'
+  post:
+    send_to_fcm:
+      status_messages:
+        200: 'Messages were sent'
+        422: 'For some reason application can not send messsages'

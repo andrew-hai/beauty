@@ -46,6 +46,9 @@ gem 'aasm'
 
 gem 'simple_calendar'
 
+# Firebase Cloud Messaging (FCM) for Android and iOS
+gem 'fcm'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

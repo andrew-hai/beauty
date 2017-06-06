@@ -106,6 +106,9 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.7.0)
+    fcm (0.0.2)
+      httparty
+      json
     ffi (1.9.18)
     formtastic (3.1.5)
       actionpack (>= 3.2.13)
@@ -129,6 +132,8 @@ GEM
       haml (>= 4.0, < 6)
       nokogiri (>= 1.6.0)
       ruby_parser (~> 3.5)
+    httparty (0.15.5)
+      multi_xml (>= 0.5.2)
     i18n (0.8.1)
     inherited_resources (1.7.2)
       actionpack (>= 3.2, < 5.2.x)
@@ -144,6 +149,7 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-ui-rails (6.0.1)
       railties (>= 3.2.16)
+    json (2.1.0)
     kaminari (1.0.1)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.0.1)
@@ -173,6 +179,7 @@ GEM
     mini_portile2 (2.1.0)
     minitest (5.10.1)
     multi_json (1.12.1)
+    multi_xml (0.6.0)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (4.1.0)
@@ -319,6 +326,7 @@ DEPENDENCIES
   capistrano3-unicorn
   coffee-rails (~> 4.2)
   devise
+  fcm
   haml-rails
   jbuilder (~> 2.5)
   jquery-rails

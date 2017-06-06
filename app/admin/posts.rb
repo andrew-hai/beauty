@@ -1,13 +1,17 @@
 ActiveAdmin.register Post do
   permit_params :title,
                 :text
+
   index do
     selectable_column
     id_column
     column :title
     column :text
     column :created_at
-    actions
+
+    actions defaults: true do |post|
+      link_to I18n.t(:send_to_fcm), send_to_fcm_admin_post_path(post)
+    end
   end
 
   filter :title
@@ -28,5 +32,27 @@ ActiveAdmin.register Post do
       row :text
       row :created_at
     end
+  end
+
+  action_item :send_to_fcm, only: :show do
+    link_to I18n.t(:send_to_fcm), send_to_fcm_admin_post_path(post)
+  end
+
+  member_action :send_to_fcm, method: :get do
+    registration_ids = Device.pluck(:fcm_token)
+
+    response = if registration_ids.any?
+      fcm = FCM.new(Rails.application.secrets.firebase_api_key)
+      options = { data: { title: resource.title, text: resource.text } }
+      fcm.send(registration_ids, options)
+    end
+
+    if response && response['status_code'] == 200
+      flash[:notice] = I18n.t('post.send_to_fcm.status_messages.200')
+    else
+      flash[:error] = I18n.t('post.send_to_fcm.status_messages.422')
+    end
+
+    redirect_to action: :index
   end
 end
