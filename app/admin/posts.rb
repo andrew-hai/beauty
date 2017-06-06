@@ -42,12 +42,14 @@ ActiveAdmin.register Post do
     registration_ids = Device.pluck(:fcm_token)
 
     response = if registration_ids.any?
+      require 'fcm'
+
       fcm = FCM.new(Rails.application.secrets.firebase_api_key)
       options = { data: { title: resource.title, text: resource.text } }
       fcm.send(registration_ids, options)
     end
 
-    if response && response['status_code'] == 200
+    if response && response[:status_code] == 200
       flash[:notice] = I18n.t('post.send_to_fcm.status_messages.200')
     else
       flash[:error] = I18n.t('post.send_to_fcm.status_messages.422')
