@@ -1,3 +1,5 @@
+require 'fcm'
+
 ActiveAdmin.register Post do
   permit_params :title,
                 :text
@@ -42,8 +44,6 @@ ActiveAdmin.register Post do
     registration_ids = Device.pluck(:fcm_token)
 
     response = if registration_ids.any?
-      require 'fcm'
-
       fcm = FCM.new(Rails.application.secrets.firebase_api_key)
       options = { data: { title: resource.title, text: resource.text } }
       fcm.send(registration_ids, options)
