@@ -14,7 +14,7 @@ class Appointment < ApplicationRecord
     end
 
     event :cancel do
-      transitions from: [:created, :processing], to: :canceled
+      transitions from: [:created, :processing, :approved], to: :canceled
     end
   end
 
