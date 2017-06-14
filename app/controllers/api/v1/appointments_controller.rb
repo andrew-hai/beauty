@@ -4,7 +4,8 @@ module Api::V1
       appointments = Appointment.where(device_id: params[:device_id])
 
       render json: appointments.as_json(
-        only: [:id, :device_id, :full_name, :phone, :arranged_at, :aasm_state, :experts_service_id]
+        only: [:id, :device_id, :full_name, :phone, :arranged_at, :aasm_state, :experts_service_id],
+        methods: [:expert_full_name, :expert_description, :expert_avatar_full_path, :service_name]
       )
     end
 
@@ -13,7 +14,8 @@ module Api::V1
 
       if appointment.save
         render json: appointment.as_json(
-          only: [:id, :device_id, :full_name, :phone, :arranged_at, :aasm_state, :experts_service_id]
+          only: [:id, :device_id, :full_name, :phone, :arranged_at, :aasm_state, :experts_service_id],
+          methods: [:expert_full_name, :expert_description, :expert_avatar_full_path, :service_name]
         )
       else
         render json: appointment.errors, status: 422
