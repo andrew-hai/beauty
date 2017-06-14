@@ -23,6 +23,10 @@ class Appointment < ApplicationRecord
 
   validates :full_name, :phone, :arranged_at, :device, :experts_service, presence: true
 
+  delegate :expert, :service, to: :experts_service, allow_nil: true
+  delegate :full_name, :avatar_full_path, :description, to: :expert, prefix: true, allow_nil: true
+  delegate :name, to: :service, prefix: true, allow_nil: true
+
   def experts_service_label
     experts_service.label
   end

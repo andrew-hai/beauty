@@ -22,7 +22,8 @@ module Api::V1
 
     def show
       render json: appointment.as_json(
-        only: [:id, :device_id, :full_name, :phone, :arranged_at, :aasm_state, :experts_service_id]
+        only: [:id, :device_id, :full_name, :phone, :arranged_at, :aasm_state, :experts_service_id],
+        methods: [:expert_full_name, :expert_description, :expert_avatar_full_path, :service_name]
       )
     end
 
