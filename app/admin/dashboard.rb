@@ -37,7 +37,7 @@ ActiveAdmin.register_page "Dashboard" do
           li 'GET http://46.254.19.175/api/v1/appointments?device_id=$device_id'
           li 'POST http://46.254.19.175/api/v1/appointments - required params { appointment: [:device_id, :full_name, :phone, :arranged_at, :experts_service_id] }'
           li 'GET http://46.254.19.175/api/v1/appointments/$appointment_id'
-          li 'PUT http://46.254.19.175/api/v1/appointments/$appointment_id/cancel'
+          li 'DELETE http://46.254.19.175/api/v1/appointments/$appointment_id'
         end
         h4 'Contacts'
         ul do

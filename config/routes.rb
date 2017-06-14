@@ -11,9 +11,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :appointments, only: [:index, :create, :show] do
-        put :cancel, on: :member
-      end
+      resources :appointments, only: [:index, :create, :show, :destroy]
       resources :contacts, only: [:index]
       resources :devices, only: [:create]
       resources :email_addresses, only: [:index]

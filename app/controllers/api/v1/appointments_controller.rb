@@ -29,8 +29,8 @@ module Api::V1
       )
     end
 
-    def cancel
-      if appointment.cancel!
+    def destroy
+      if appointment.destroy
         render json: :ok
       else
         render json: appointment.errors, status: 422
