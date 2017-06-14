@@ -1,5 +1,5 @@
 module Api::V1
-  class DevicesController < Api::ApplicationController
+  class AppointmentsController < Api::ApplicationController
     def index
       appointments = Appointment.where(device_id: params[:device_id])
 

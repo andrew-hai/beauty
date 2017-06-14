@@ -1,6 +1,6 @@
 class Service < ApplicationRecord
   belongs_to :sub_category
-  has_many :experts_services
+  has_many :experts_services, dependent: :destroy
   has_many :experts, through: :experts_services
 
   validates :name, :price, :sub_category, presence: true

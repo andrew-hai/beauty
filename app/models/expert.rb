@@ -1,7 +1,7 @@
 class Expert < ApplicationRecord
   include ActionView::Helpers::AssetUrlHelper
 
-  has_many :experts_services
+  has_many :experts_services, dependent: :destroy
   has_many :services, through: :experts_services
   has_many :working_days, inverse_of: :expert
 

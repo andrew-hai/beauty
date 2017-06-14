@@ -4,46 +4,57 @@ ru:
       appointment:
         one: 'Прием'
         few: 'Приемы'
+        many: 'Приемы'
         other: 'Приемы'
       category:
         one: 'Категорию услуг'
         few: 'Категории услуг'
+        many: 'Категории услуг'
         other: 'Категории услуг'
       contact:
         one: 'Контакты'
         few: 'Контакты'
+        many: 'Контакты'
         other: 'Контакты'
       device:
         one: 'Устройство'
         few: 'Устройства'
+        many: 'Устройства'
         other: 'Устройства'
       email_address:
         one: 'Email'
         few: 'Emails'
+        many: 'Emails'
         other: 'Emails'
       expert:
         one: 'Специалиста'
         few: 'Специалисты'
+        many: 'Специалисты'
         other: 'Специалисты'
       experts_service:
         one: 'Услугу специалиста'
         few: 'Услуги специалиста'
+        many: 'Услуги специалиста'
         other: 'Услуги специалиста'
       post:
         one: 'Новость'
         few: 'Новости'
+        many: 'Новости'
         other: 'Новости'
       service:
         one: 'Услугу'
         few: 'Услуги'
+        many: 'Услуги'
         other: 'Услуги'
       sub_category:
         one: 'Под категорию услуг'
         few: 'Под категории услуг'
+        many: 'Под категории услуг'
         other: 'Под категории услуг'
       user:
         one: 'Пользователя'
         few: 'Пользователи'
+        many: 'Пользователи'
         other: 'Пользователи'
     attributes:
       appointment:
