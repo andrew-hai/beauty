@@ -15,11 +15,9 @@ class Service < ApplicationRecord
       ).order('categories.name ASC, sub_categories.name ASC, services.name ASC')
   end
 
-  def label
-    "[#{sub_category.category.name}] [#{sub_category.name}] #{name}"
-  end
+  delegate :category, :label, :name, to: :sub_category, prefix: true, allow_nil: true
 
-  def sub_category_label
-    sub_category.label
+  def label
+    "[#{sub_category_category.try(:name)}] [#{sub_category_name}] #{name}"
   end
 end

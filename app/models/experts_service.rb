@@ -17,11 +17,10 @@ class ExpertsService < ApplicationRecord
       ).order('experts.full_name ASC, services.name ASC')
   end
 
-  def expert_full_name
-    expert.full_name
-  end
+  delegate :full_name, to: :expert, prefix: true, allow_nil: true
+  delegate :label, to: :service, prefix: true, allow_nil: true
 
   def label
-    "#{expert_full_name} - #{service.label}"
+    "#{expert_full_name} - #{service_label}"
   end
 end

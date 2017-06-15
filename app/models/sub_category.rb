@@ -4,7 +4,9 @@ class SubCategory < ApplicationRecord
   belongs_to :category
   has_many :services, inverse_of: :sub_category
 
+  delegate :name, to: :category, prefix: true, allow_nil: true
+
   def label
-    "[#{category.name}] #{name}"
+    "[#{category_name}] #{name}"
   end
 end
