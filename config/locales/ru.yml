@@ -36,6 +36,12 @@ ru:
   date:
     formats:
       default: '%-d %B, %Y'
+      full: '%-d %B, %Y'
+      short: '%-d %B'
+  time:
+    formats:
+      default: '%-d %B, %Y'
+      full: '%-d %B %Y %H:%M'
       short: '%-d %B'
   appointment_details: 'Детали приёма'
   category_details: 'Детали категории услуг'

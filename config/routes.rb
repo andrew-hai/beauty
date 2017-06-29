@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
+      resources :abouts, only: [:index]
       resources :appointments, only: [:index, :create, :show, :destroy]
       resources :contacts, only: [:index]
       resources :devices, only: [:create]

@@ -32,6 +32,10 @@ ActiveAdmin.register_page "Dashboard" do
     div do
       div do
         h3 'API calls:'
+        h4 'About Us'
+        ul do
+          li 'GET http://46.254.19.175/api/v1/abouts'
+        end
         h4 'Appointments:'
         ul do
           li 'GET http://46.254.19.175/api/v1/appointments?device_id=$device_id'
