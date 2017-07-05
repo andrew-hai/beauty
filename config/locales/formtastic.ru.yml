@@ -11,6 +11,8 @@ ru:
 
     labels:
       appointment:
+        about: 'О нас'
+      appointment:
         full_name: 'ФИО'
         phone: 'Телефон'
         arranged_at: 'Назначено на'
@@ -33,6 +35,8 @@ ru:
         password: 'Пароль'
         password_confirmation: 'Подтверждение пароля'
     placeholders:
+      about:
+        about: 'Введите текс О нас'
       appointment:
         full_name: 'Введите ФИО'
         phone: 'Введите Телефон'

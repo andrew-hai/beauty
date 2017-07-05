@@ -1,6 +1,11 @@
 ru: 
   activerecord:
     models:
+      about:
+        one: 'О нас'
+        few: 'О нас'
+        many: 'О нас'
+        other: 'О нас'
       appointment:
         one: 'Прием'
         few: 'Приемы'
@@ -57,6 +62,8 @@ ru:
         many: 'Пользователи'
         other: 'Пользователи'
     attributes:
+      about:
+        about: 'О нас'
       appointment:
         full_name: 'ФИО'
         phone: 'Телефон'

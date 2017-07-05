@@ -13,6 +13,7 @@ module Api::V1
       @appointment = Appointment.create(appointment_params)
 
       if appointment.save
+        AppointmentMailer.created(@appointment).deliver
         render json: appointment.as_json(
           only: [:id, :device_id, :full_name, :phone, :arranged_at, :aasm_state, :experts_service_id],
           methods: [:expert_full_name, :expert_description, :expert_avatar_full_path, :service_name]

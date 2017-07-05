@@ -1,0 +1,24 @@
+%p
+  %strong
+    ID:
+  = @appointment.id
+%p
+  %strong
+    ФИО клиента:
+  = @appointment.full_name
+%p
+  %strong
+    Телефон клиента:
+  = @appointment.phone
+%p
+  %strong
+    Прием назначен на:
+  = l(@appointment.arranged_at, format: :full)
+%p
+  %strong
+    Специалист / Услуга:
+  = @appointment.experts_service_label
+%p
+  %strong
+    Создано:
+  = l(@appointment.created_at, format: :full)
