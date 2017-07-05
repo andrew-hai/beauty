@@ -1,7 +1,7 @@
 class PriceListPresenter
 
   def self.data
-    list = Category.joins(sub_categories: :services).order('categories.name')
+    list = Category.includes(sub_categories: :services).order('categories.name')
 
     list.map do |category|
       category.as_json(only: [:id, :name]).tap do |cj|
