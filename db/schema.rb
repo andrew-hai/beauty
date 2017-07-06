@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170629172853) do
+ActiveRecord::Schema.define(version: 20170706151653) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,12 +26,13 @@ ActiveRecord::Schema.define(version: 20170629172853) do
     t.string   "full_name"
     t.string   "phone"
     t.datetime "arranged_at"
-    t.string   "aasm_state",         default: "created", null: false
-    t.integer  "experts_service_id"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
+    t.string   "aasm_state",   default: "created", null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.integer  "expert_id"
+    t.string   "service_name"
     t.index ["device_id"], name: "index_appointments_on_device_id", using: :btree
-    t.index ["experts_service_id"], name: "index_appointments_on_experts_service_id", using: :btree
+    t.index ["expert_id"], name: "index_appointments_on_expert_id", using: :btree
   end
 
   create_table "categories", force: :cascade do |t|
@@ -81,8 +82,9 @@ ActiveRecord::Schema.define(version: 20170629172853) do
     t.string   "specialty"
     t.string   "experience"
     t.text     "description"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.integer  "position",            default: 0, null: false
   end
 
   create_table "experts_services", force: :cascade do |t|
@@ -103,8 +105,9 @@ ActiveRecord::Schema.define(version: 20170629172853) do
     t.string   "name"
     t.integer  "price"
     t.integer  "sub_category_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.integer  "position",        default: 0, null: false
     t.index ["sub_category_id"], name: "index_services_on_sub_category_id", using: :btree
   end
 

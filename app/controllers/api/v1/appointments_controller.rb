@@ -4,8 +4,8 @@ module Api::V1
       appointments = Appointment.where(device_id: params[:device_id])
 
       render json: appointments.as_json(
-        only: [:id, :device_id, :full_name, :phone, :arranged_at, :aasm_state, :experts_service_id],
-        methods: [:expert_full_name, :expert_description, :expert_avatar_full_path, :service_name]
+        only: [:id, :device_id, :full_name, :phone, :arranged_at, :aasm_state, :service_name],
+        methods: [:expert_full_name, :expert_description, :expert_avatar_full_path]
       )
     end
 
@@ -15,8 +15,8 @@ module Api::V1
       if appointment.save
         AppointmentMailer.created(@appointment).deliver
         render json: appointment.as_json(
-          only: [:id, :device_id, :full_name, :phone, :arranged_at, :aasm_state, :experts_service_id],
-          methods: [:expert_full_name, :expert_description, :expert_avatar_full_path, :service_name]
+          only: [:id, :device_id, :full_name, :phone, :arranged_at, :aasm_state, :service_name],
+          methods: [:expert_full_name, :expert_description, :expert_avatar_full_path]
         )
       else
         render json: appointment.errors, status: 422
@@ -25,8 +25,8 @@ module Api::V1
 
     def show
       render json: appointment.as_json(
-        only: [:id, :device_id, :full_name, :phone, :arranged_at, :aasm_state, :experts_service_id],
-        methods: [:expert_full_name, :expert_description, :expert_avatar_full_path, :service_name]
+        only: [:id, :device_id, :full_name, :phone, :arranged_at, :aasm_state, :service_name],
+        methods: [:expert_full_name, :expert_description, :expert_avatar_full_path]
       )
     end
 
@@ -44,7 +44,8 @@ module Api::V1
         :full_name,
         :phone,
         :arranged_at,
-        :experts_service_id
+        :service_name,
+        :expert_id
       )
     end
 

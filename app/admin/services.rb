@@ -1,8 +1,11 @@
 include ApplicationHelper
 
 ActiveAdmin.register Service do
+  config.sort_order = 'position_asc'
+
   permit_params :name,
                 :price,
+                :position,
                 :sub_category_id
 
   index do
@@ -10,6 +13,7 @@ ActiveAdmin.register Service do
     id_column
     column :name
     column :price
+    column :position
     column :sub_category_label
     actions
   end
@@ -21,6 +25,7 @@ ActiveAdmin.register Service do
     f.inputs I18n.t(:service_details) do
       f.input :name
       f.input :price
+      f.input :position
       f.input :sub_category, collection: sub_category_collection
     end
     f.actions
@@ -31,6 +36,7 @@ ActiveAdmin.register Service do
       row :id
       row :name
       row :price
+      row :position
       row :sub_category_label
     end
   end

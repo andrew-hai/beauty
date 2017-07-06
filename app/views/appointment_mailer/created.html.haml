@@ -16,8 +16,12 @@
   = l(@appointment.arranged_at, format: :full)
 %p
   %strong
-    Специалист / Услуга:
-  = @appointment.experts_service_label
+    Название Услуги:
+  = @appointment.service_name
+%p
+  %strong
+    Специалист:
+  = @appointment.expert_full_name
 %p
   %strong
     Создано:

@@ -17,8 +17,6 @@ ru:
         phone: 'Телефон'
         arranged_at: 'Назначено на'
         aasm_state: 'Статус'
-        experts_service: 'Процедура'
-        experts_service_id: 'Процедура'
       expert:
         full_name: 'ФИО'
         avatar: 'Аватар'
@@ -42,7 +40,7 @@ ru:
         phone: 'Введите Телефон'
         arranged_at: 'Введите время процедуры'
         device_id: 'Выбирете устройство'
-        experts_service_id: 'Выбирете процедуру'
+        service_name: 'Введите название услуги'
       category:
         name: 'Введите наименование'
       contact:
@@ -72,6 +70,7 @@ ru:
         password_confirmation: 'Подтвердите пароль'
     prompts:
       appointment:
-        experts_service_id: 'Процедура'
+        expert_id: 'Специалист'
+        expert: 'Специалист'
       user:
         role: 'Выберите роль пользователя'

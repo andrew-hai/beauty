@@ -6,7 +6,8 @@ ActiveAdmin.register Appointment do
                 :arranged_at,
                 :aasm_state,
                 :device_id,
-                :experts_service_id
+                :service_name,
+                :expert_id
 
   index do
     selectable_column
@@ -16,7 +17,8 @@ ActiveAdmin.register Appointment do
     column :arranged_at
     state_column :aasm_state
     column :device
-    column :experts_service_label
+    column :service_name
+    column :expert
     column :created_at
     actions
   end
@@ -25,6 +27,7 @@ ActiveAdmin.register Appointment do
   filter :phone
   filter :arranged_at
   filter :device_id
+  filter :expert
   filter :aasm_state
   filter :created_at
 
@@ -35,10 +38,8 @@ ActiveAdmin.register Appointment do
       f.input :arranged_at, as: :date_time_picker
       f.input :aasm_state, as: :select, collection: appointment_states_collection
       f.input :device
-      f.input :experts_service_id,
-        as: :search_select, url: search_admin_experts_path,
-        placeholder: I18n.t('formtastic.placeholders.appointment.experts_service_id'),
-        fields: [:name], display_name: :label, minimum_input_length: 3
+      f.input :service_name
+      f.input :expert
     end
     f.actions
   end
@@ -50,7 +51,8 @@ ActiveAdmin.register Appointment do
       row :arranged_at
       state_row :aasm_state
       row :device
-      row :experts_service_label
+      row :service_name
+      row :expert
       row :created_at
     end
   end

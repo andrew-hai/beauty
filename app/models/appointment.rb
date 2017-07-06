@@ -19,12 +19,9 @@ class Appointment < ApplicationRecord
   end
 
   belongs_to :device
-  belongs_to :experts_service
+  belongs_to :expert
 
-  validates :full_name, :phone, :arranged_at, :device, :experts_service, presence: true
+  validates :full_name, :phone, :arranged_at, :device, :expert, :service_name, presence: true
 
-  delegate :expert, :service, to: :experts_service, allow_nil: true
-  delegate :label, to: :experts_service, prefix: true, allow_nil: true
   delegate :full_name, :avatar_full_path, :description, to: :expert, prefix: true, allow_nil: true
-  delegate :name, to: :service, prefix: true, allow_nil: true
 end

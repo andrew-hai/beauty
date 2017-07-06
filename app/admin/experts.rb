@@ -1,9 +1,12 @@
 ActiveAdmin.register Expert do
+  config.sort_order = 'position_asc'
+
   permit_params :full_name,
                 :avatar,
                 :specialty,
                 :experience,
                 :description,
+                :position,
                 experts_services_attributes: [:id, :service_id, :_destroy]
 
   index do
@@ -14,6 +17,7 @@ ActiveAdmin.register Expert do
     column :specialty
     column :experience
     column :description
+    column :position
     actions
   end
 
@@ -29,6 +33,7 @@ ActiveAdmin.register Expert do
       f.input :specialty
       f.input :experience
       f.input :description
+      f.input :position
     end
 
     f.inputs I18n.t(:experts_services) do
@@ -52,6 +57,7 @@ ActiveAdmin.register Expert do
       row :specialty
       row :experience
       row :description
+      row :position
     end
 
     panel I18n.t(:experts_services) do

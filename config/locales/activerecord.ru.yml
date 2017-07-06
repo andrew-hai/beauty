@@ -75,9 +75,9 @@ ru:
         aasm_state/canceled: 'Отменен'
         device_id: 'Устройство'
         device: 'Устройство'
-        experts_service: 'Процедура'
-        experts_service_label: 'Процедура'
-        experts_service_id: 'Процедура'
+        service_name: 'Название Услуги'
+        expert: 'Специалист'
+        expert_id: 'Специалист'
         created_at: 'Создано'
       category:
         name: 'Наименование'
@@ -106,6 +106,7 @@ ru:
         specialty: 'Специальность'
         experience: 'Опыт'
         description: 'Описание'
+        position: 'Позиция'
         sub_category: 'Под категория'
         sub_category_id: 'Под категория'
         sub_category_label: 'Под категория'
@@ -119,6 +120,7 @@ ru:
         sub_category_label: 'Категория / Под категория'
         name: 'Наименование'
         price: 'Цена'
+        position: 'Позиция'
         sub_category: 'Категория / Под категория'
         sub_category_id: 'Категория / Под категория'
       sub_category:
