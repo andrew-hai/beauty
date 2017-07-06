@@ -7,8 +7,8 @@ class Expert < ApplicationRecord
 
   has_attached_file :avatar,
     styles: { 
-      medium: ['300x300#', :png],
-      thumb: ['100x100#', :png]
+      medium: ['300x300>', :png],
+      thumb: ['100x100>', :png]
     },
     default_url: '/assets/:style/missing.png'
 
