@@ -46,11 +46,13 @@ ActiveAdmin.register Post do
     response = if registration_ids.any?
       fcm = FCM.new(Rails.application.secrets.firebase_api_key)
       options = {
-        priority: 'normal',
+        priority: 'high',
         notification: {
           body: resource.text,
           title: resource.title,
-          icon: 'new'
+          icon: 'new',
+          badge: 1,
+          sound: 'defalut'
         },
         data: { title: resource.title, text: resource.text }
       }

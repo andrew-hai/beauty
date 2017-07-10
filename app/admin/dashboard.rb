@@ -10,7 +10,7 @@ ActiveAdmin.register_page "Dashboard" do
           ul do
             Appointment.order(id: :desc).limit(15).map do |appointment|
               li link_to(
-                "#{appointment.full_name} - #{appointment.experts_service_label}",
+                "#{appointment.full_name} - #{appointment.expert_full_name} - #{appointment.service_name}",
                 admin_appointment_path(appointment)
               )
             end
