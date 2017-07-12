@@ -76,4 +76,12 @@ ActiveAdmin.register Expert do
 
     render json: results.as_json(only: [:id], methods: [:label])
   end
+
+  controller do
+    def update
+      update! do |format|
+        format.html { redirect_to admin_experts_path } if resource.valid?
+      end
+    end
+  end
 end
