@@ -6,7 +6,7 @@ ActiveAdmin.register Service do
   permit_params :name,
                 :price,
                 :position,
-                :sub_category_id
+                :owner_data
 
   index do
     selectable_column
@@ -14,7 +14,7 @@ ActiveAdmin.register Service do
     column :name
     column :price
     column :position
-    column :sub_category_label
+    column :owner_label
     actions
   end
 
@@ -26,7 +26,7 @@ ActiveAdmin.register Service do
       f.input :name
       f.input :price
       f.input :position
-      f.input :sub_category, collection: sub_category_collection
+      f.input :owner_data, collection: service_owners_list
     end
     f.actions
   end
@@ -37,14 +37,7 @@ ActiveAdmin.register Service do
       row :name
       row :price
       row :position
-      row :sub_category_label
+      row :owner_label
     end
-  end
-
-  collection_action :search, method: :get do
-    name = params['q']['groupings']['0']['name_contains']
-    results = Service.search_by_name(name)
-
-    render json: results.as_json(only: [:id], methods: [:label])
   end
 end

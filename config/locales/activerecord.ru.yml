@@ -81,6 +81,7 @@ ru:
         created_at: 'Создано'
       category:
         name: 'Наименование'
+        position: 'Позиция'
         created_at: 'Создано'
       contact:
         work_hours: 'Режим работы'
@@ -117,12 +118,11 @@ ru:
         text: 'Текст'
         created_at: 'Создано'
       service:
-        sub_category_label: 'Категория / Под категория'
+        owner_label: 'Категория / Под категория'
         name: 'Наименование'
         price: 'Цена'
         position: 'Позиция'
-        sub_category: 'Категория / Под категория'
-        sub_category_id: 'Категория / Под категория'
+        owner_data: 'Категория / Под категория'
       sub_category:
         name: 'Наименование'
       user: 

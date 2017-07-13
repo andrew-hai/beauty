@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170706151653) do
+ActiveRecord::Schema.define(version: 20170713143612) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,8 +37,9 @@ ActiveRecord::Schema.define(version: 20170706151653) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "position",   default: 1, null: false
   end
 
   create_table "contacts", force: :cascade do |t|
@@ -104,11 +105,12 @@ ActiveRecord::Schema.define(version: 20170706151653) do
   create_table "services", force: :cascade do |t|
     t.string   "name"
     t.integer  "price"
-    t.integer  "sub_category_id"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-    t.integer  "position",        default: 0, null: false
-    t.index ["sub_category_id"], name: "index_services_on_sub_category_id", using: :btree
+    t.integer  "owner_id"
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.integer  "position",   default: 0,             null: false
+    t.string   "owner_type", default: "SubCategory", null: false
+    t.index ["owner_id"], name: "index_services_on_owner_id", using: :btree
   end
 
   create_table "sub_categories", force: :cascade do |t|

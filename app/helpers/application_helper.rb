@@ -3,9 +3,13 @@ module ApplicationHelper
     @appointment_states_collection ||= Appointment.aasm.states
   end
 
-  def sub_category_collection
-    @sub_category_collection ||= SubCategory.joins(:category)
-      .order('categories.name ASC, sub_categories.name ASC')
-      .all.map{ |sc| [sc.label, sc.id] }
+  def service_owners_list
+    @service_owners_list ||= begin
+      SubCategory.joins(:category)
+        .order('categories.name ASC, sub_categories.name ASC')
+        .all.map{ |sc| [sc.label, "#{sc.class}::#{sc.id}"] } +
+      Category.order('categories.name ASC')
+        .all.map{ |c| [c.label, "#{c.class}::#{c.id}"] }
+    end
   end
 end

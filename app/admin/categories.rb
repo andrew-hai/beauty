@@ -1,10 +1,14 @@
 ActiveAdmin.register Category do
+  config.sort_order = 'position_asc'
+
   permit_params :name,
+                :position,
                 sub_categories_attributes: [:id, :name, :desctiprion, :_destroy]
   index do
     selectable_column
     id_column
     column :name
+    column :position
     column :created_at
     actions
   end
@@ -15,6 +19,7 @@ ActiveAdmin.register Category do
   form do |f|
     f.inputs I18n.t(:category_details) do
       f.input :name
+      f.input :position
 
       f.inputs I18n.t(:sub_categories) do
         f.has_many :sub_categories, heading: false, allow_destroy: true do |sc|
@@ -29,6 +34,7 @@ ActiveAdmin.register Category do
     attributes_table do
       row :id
       row :name
+      row :position
       row :created_at
     end
 
