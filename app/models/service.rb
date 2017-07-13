@@ -25,6 +25,6 @@ class Service < ApplicationRecord
   end
 
   def owner_data
-    "#{owner.class}::#{owner.id}"
+    "#{owner.class}::#{owner.id}" if owner.present?
   end
 end
