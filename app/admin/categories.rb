@@ -45,4 +45,18 @@ ActiveAdmin.register Category do
       end
     end
   end
+
+  controller do
+    def create
+      create! do |format|
+        format.html { redirect_to admin_categories_path } if resource.valid?
+      end
+    end
+
+    def update
+      update! do |format|
+        format.html { redirect_to admin_categories_path } if resource.valid?
+      end
+    end
+  end
 end

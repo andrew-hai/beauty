@@ -40,4 +40,25 @@ ActiveAdmin.register Service do
       row :owner_label
     end
   end
+
+  collection_action :search, method: :get do
+    name = params['q']['groupings']['0']['name_contains']
+    results = Service.search_by_name(name)
+
+    render json: results.as_json(only: [:id], methods: [:label])
+  end
+
+  controller do
+    def create
+      create! do |format|
+        format.html { redirect_to admin_services_path } if resource.valid?
+      end
+    end
+
+    def update
+      update! do |format|
+        format.html { redirect_to admin_services_path } if resource.valid?
+      end
+    end
+  end
 end

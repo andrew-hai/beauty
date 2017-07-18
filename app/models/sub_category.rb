@@ -7,6 +7,6 @@ class SubCategory < ApplicationRecord
   delegate :name, to: :category, prefix: true, allow_nil: true
 
   def label
-    "[#{category_name}] #{name}"
+    "[#{category_name}] [#{name}]"
   end
 end

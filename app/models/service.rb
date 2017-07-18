@@ -6,7 +6,9 @@ class Service < ApplicationRecord
   validates :name, :price, :owner_data, :owner, presence: true
 
   scope :search_by_name, ->(name) do
-    includes(sub_category: :category)
+    includes(:owner)
+      .joins("LEFT OUTER JOIN categories ON categories.id = services.owner_id AND services.owner_type = 'Category'")
+      .joins("LEFT OUTER JOIN sub_categories ON sub_categories.id = services.owner_id AND services.owner_type = 'SubCategory'")
       .where(<<-SQL, "%#{name}%", "%#{name}%", "%#{name}%"
           (LOWER(categories.name) LIKE LOWER(?)) OR
             (LOWER(sub_categories.name) LIKE LOWER(?)) OR
@@ -26,5 +28,9 @@ class Service < ApplicationRecord
 
   def owner_data
     "#{owner.class}::#{owner.id}" if owner.present?
+  end
+
+  def label
+    "#{owner_label} #{name}"
   end
 end

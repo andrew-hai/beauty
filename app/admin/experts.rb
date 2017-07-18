@@ -78,6 +78,12 @@ ActiveAdmin.register Expert do
   end
 
   controller do
+    def create
+      create! do |format|
+        format.html { redirect_to admin_experts_path } if resource.valid?
+      end
+    end
+
     def update
       update! do |format|
         format.html { redirect_to admin_experts_path } if resource.valid?
