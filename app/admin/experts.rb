@@ -38,9 +38,7 @@ ActiveAdmin.register Expert do
 
     f.inputs I18n.t(:experts_services) do
       f.has_many :experts_services, heading: false, allow_destroy: true do |sc|
-        sc.input :service_id,
-          as: :search_select, url: search_admin_services_path,
-          fields: [:name], display_name: :label, minimum_input_length: 3
+        sc.input :service_id, as: :select, collection: services_list
       end
     end
 
@@ -68,13 +66,6 @@ ActiveAdmin.register Expert do
     end
 
     render 'view_calendar', expert: expert
-  end
-
-  collection_action :search, method: :get do
-    name = params['q']['groupings']['0']['name_contains']
-    results = ExpertsService.search_by_name(name)
-
-    render json: results.as_json(only: [:id], methods: [:label])
   end
 
   controller do

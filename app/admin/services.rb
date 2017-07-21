@@ -41,13 +41,6 @@ ActiveAdmin.register Service do
     end
   end
 
-  collection_action :search, method: :get do
-    name = params['q']['groupings']['0']['name_contains']
-    results = Service.search_by_name(name)
-
-    render json: results.as_json(only: [:id], methods: [:label])
-  end
-
   controller do
     def create
       create! do |format|

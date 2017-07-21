@@ -12,4 +12,8 @@ module ApplicationHelper
         .all.map{ |c| [c.label, "#{c.class}::#{c.id}"] }
     end
   end
+
+  def services_list
+    @services_list ||= Service.all.map { |s| [s.name, s.id] }
+  end
 end
