@@ -51,7 +51,7 @@ ActiveAdmin.register Post do
           body: resource.text,
           title: resource.title,
           icon: 'new',
-          badge: 1,
+          badge: 0,
           sound: 'defalut'
         },
         data: { title: resource.title, text: resource.text }
