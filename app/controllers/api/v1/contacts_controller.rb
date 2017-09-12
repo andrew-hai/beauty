@@ -6,7 +6,8 @@ module Api::V1
           :work_hours, :phone, :email, :site_url, :vk_url_1, :vk_url_2,
           :vk_url_3, :vk_url_4, :facebook_url, :twitter_url,
           :instagram_url, :address, :latitude, :longitude
-        ]
+        ],
+        methods: [:image_full_path]
       )
     end
   end

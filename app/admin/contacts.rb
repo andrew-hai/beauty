@@ -16,7 +16,8 @@ ActiveAdmin.register Contact do
                 :instagram_url,
                 :address,
                 :latitude,
-                :longitude
+                :longitude,
+                :image
 
   index do
     selectable_column
@@ -35,6 +36,7 @@ ActiveAdmin.register Contact do
     column :address
     column :latitude
     column :longitude
+    image_column :image, style: :thumb
     actions
   end
 
@@ -54,6 +56,7 @@ ActiveAdmin.register Contact do
       f.input :address
       f.input :latitude
       f.input :longitude
+      f.input :image
     end
 
     f.actions
@@ -75,6 +78,7 @@ ActiveAdmin.register Contact do
       row :address
       row :latitude
       row :longitude
+      image_row :image, style: :medium
     end
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170713143612) do
+ActiveRecord::Schema.define(version: 20170912155812) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,13 +52,17 @@ ActiveRecord::Schema.define(version: 20170713143612) do
     t.string   "twitter_url"
     t.string   "instagram_url"
     t.string   "address"
-    t.decimal  "latitude",      precision: 15, scale: 13
-    t.decimal  "longitude",     precision: 15, scale: 13
-    t.datetime "created_at",                              null: false
-    t.datetime "updated_at",                              null: false
+    t.decimal  "latitude",           precision: 15, scale: 13
+    t.decimal  "longitude",          precision: 15, scale: 13
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
     t.string   "vk_url_2"
     t.string   "vk_url_3"
     t.string   "vk_url_4"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "devices", force: :cascade do |t|
